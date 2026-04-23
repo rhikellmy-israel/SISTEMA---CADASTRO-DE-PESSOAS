@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Metodo {
     //Método para cadastrar uma pessoa
-    public static void push(List<Pessoa> Lista) {
+    public static void push(List<Pessoa>lista) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite o nome da pessoa: ");
@@ -24,7 +24,10 @@ public class Metodo {
 
         Pessoa pessoa = new Pessoa(nome, idade, cpf, profissao);
         
-        Lista.add(pessoa);
+        lista.add(pessoa);
+
+        System.out.println("Pessoa - " + pessoa.getNome() + " - cadastrada com sucesso!"
+        );
 
         System.out.println("Pessoa cadastrada com sucesso!");
     }
@@ -53,13 +56,10 @@ public class Metodo {
             if(p.getNome().equalsIgnoreCase(nomeParaDeletar)){
                 lista.remove(i);
                 System.out.println("Pessoa Deletada da lista com sucesso!");
+                return;
             }
         }
         System.out.println("Não foi possivel encontrar a pessoa mencionada");
-
-        Scanner sc = new Scanner(System.in);
-        sc.close();
-
     }
 }
 
