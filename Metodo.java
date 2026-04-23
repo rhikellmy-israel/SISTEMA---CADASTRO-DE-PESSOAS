@@ -15,7 +15,7 @@ public class Metodo {
         sc.nextLine();
 
         System.out.println("Informe o CPF da pessoa: ");
-        Double cpf = sc.nextDouble();
+        String cpf = sc.nextLine();
         sc.nextLine();
 
         System.out.println("Digite a profissáo da pessoa: ");
@@ -23,22 +23,23 @@ public class Metodo {
         sc.nextLine();
 
         Pessoa pessoa = new Pessoa(nome, idade, cpf, profissao);
-        lista.add(pessoa);
+        
+        Lista.add(pessoa);
 
         System.out.println("Pessoa cadastrada com sucesso!");
     }
     
 
     // Método para mostrar toda a lista de pessoas cadastradas
-    public static void listaPessoa() {
+    public static void listaPessoa(List<Pessoa> lista) {
         if (lista.isEmpty()) {
             System.out.println("A lista esta vazia");
         } else {
             for (Pessoa pessoaAtual : lista) {
-                System.out.println("Nome: " + nome);
-                System.out.println("Idade: " + idade);
-                System.out.println("CPF: " + cpf);
-                System.out.println("Profissão: " + profissao);
+                System.out.println("Nome: " + pessoaAtual.getNome());
+                System.out.println("Idade: " + pessoaAtual.getIdade());
+                System.out.println("CPF: " + pessoaAtual.getCpf());
+                System.out.println("Profissão: " + pessoaAtual.getProfissao());
                 System.out.println("----------");
             }
         }
@@ -46,8 +47,8 @@ public class Metodo {
 
     // Método para deletar um cadastro de pessoa
 
-    public static void deletar(List<Pessoa> lista ; String nomeParaDeletar){
-        for(int i = 0; i < lista.size; i++){
+    public static void deletar(List<Pessoa> lista, String nomeParaDeletar){
+        for(int i = 0; i < lista.size(); i++){
             Pessoa p = lista.get(i);
             if(p.getNome().equalsIgnoreCase(nomeParaDeletar)){
                 lista.remove(i);
@@ -55,5 +56,12 @@ public class Metodo {
             }
         }
         System.out.println("Não foi possivel encontrar a pessoa mencionada");
+
+        Scanner sc = new Scanner(System.in);
+        sc.close();
+
     }
 }
+
+
+
