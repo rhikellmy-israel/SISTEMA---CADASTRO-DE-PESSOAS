@@ -27,8 +27,19 @@ public class Pessoa {
         return profissao;
     }
     public void add() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
+    public void setNome(String novoNome) {
+        this.nome = novoNome;
+    }
+    public void setIdade(int novaIdade) {
+        this.idade = novaIdade;
+    }
+    public void setCpf(String novoCpf) {
+        this.cpf = novoCpf;
+    }
+    public void setProfissao(String novaProfissao) {
+        this.profissao = novaProfissao;
     }
 }
 
